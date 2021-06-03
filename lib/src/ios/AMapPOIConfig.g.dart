@@ -23,7 +23,7 @@ class AMapPOIConfig extends NSObject  {
   //endregion
 
   //region creators
-  static Future<AMapPOIConfig> create__({ bool init = true /* ios only */ }) async {
+  static Future<AMapPOIConfig?> create__({ bool init = true /* ios only */ }) async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod(
       'ObjectFactory::createAMapPOIConfig',
       {'init': init}
@@ -31,13 +31,13 @@ class AMapPOIConfig extends NSObject  {
     return AmapCoreFluttifyIOSAs<AMapPOIConfig>(__result__);
   }
   
-  static Future<List<AMapPOIConfig>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+  static Future<List<AMapPOIConfig?>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     assert(true);
     final __result_batch__ = await  kAmapCoreFluttifyChannel.invokeListMethod(
       'ObjectFactory::create_batchAMapPOIConfig',
       {'length': length, 'init': init}
     );
-    return __result_batch__
+    return __result_batch__!
         .map((it) => AmapCoreFluttifyIOSAs<AMapPOIConfig>(it))
         .toList();
   }
@@ -60,12 +60,12 @@ class AMapPOIConfig extends NSObject  {
     return __result__;
   }
   
-  Future<CLLocationCoordinate2D> get_leftTopCoordinate() async {
+  Future<CLLocationCoordinate2D?> get_leftTopCoordinate() async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_leftTopCoordinate", {'__this__': this});
     return AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
-  Future<CLLocationCoordinate2D> get_rightBottomCoordinate() async {
+  Future<CLLocationCoordinate2D?> get_rightBottomCoordinate() async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_rightBottomCoordinate", {'__this__': this});
     return AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
@@ -117,27 +117,27 @@ class AMapPOIConfig extends NSObject  {
 
 extension AMapPOIConfig_Batch on List<AMapPOIConfig> {
   //region getters
-  Future<List<String>> get_appScheme_batch() async {
+  Future<List<String>?> get_appScheme_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_appScheme_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<String>> get_appName_batch() async {
+  Future<List<String>?> get_appName_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_appName_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<String>> get_keywords_batch() async {
+  Future<List<String>?> get_keywords_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_keywords_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<CLLocationCoordinate2D>> get_leftTopCoordinate_batch() async {
+  Future<List<CLLocationCoordinate2D>?> get_leftTopCoordinate_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_leftTopCoordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
-  Future<List<CLLocationCoordinate2D>> get_rightBottomCoordinate_batch() async {
+  Future<List<CLLocationCoordinate2D>?> get_rightBottomCoordinate_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapPOIConfig::get_rightBottomCoordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }

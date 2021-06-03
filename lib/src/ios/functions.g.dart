@@ -29,7 +29,7 @@ Future<String> AMapEmptyStringIfNil(String s) async {
   return __result__;
 }
 
-Future<CLLocationCoordinate2D> AMapCoordinateConvert(CLLocationCoordinate2D coordinate, AMapCoordinateType type) async {
+Future<CLLocationCoordinate2D?> AMapCoordinateConvert(CLLocationCoordinate2D coordinate, AMapCoordinateType type) async {
   // print log
   if (fluttifyLogEnabled) {
     debugPrint('fluttify-dart: AMapCoordinateConvert::AMapCoordinateConvert([])');

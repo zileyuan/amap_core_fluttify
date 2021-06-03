@@ -23,7 +23,7 @@ class AMapNaviConfig extends NSObject  {
   //endregion
 
   //region creators
-  static Future<AMapNaviConfig> create__({ bool init = true /* ios only */ }) async {
+  static Future<AMapNaviConfig?> create__({ bool init = true /* ios only */ }) async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod(
       'ObjectFactory::createAMapNaviConfig',
       {'init': init}
@@ -31,13 +31,13 @@ class AMapNaviConfig extends NSObject  {
     return AmapCoreFluttifyIOSAs<AMapNaviConfig>(__result__);
   }
   
-  static Future<List<AMapNaviConfig>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+  static Future<List<AMapNaviConfig?>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     assert(true);
     final __result_batch__ = await  kAmapCoreFluttifyChannel.invokeListMethod(
       'ObjectFactory::create_batchAMapNaviConfig',
       {'length': length, 'init': init}
     );
-    return __result_batch__
+    return __result_batch__!
         .map((it) => AmapCoreFluttifyIOSAs<AMapNaviConfig>(it))
         .toList();
   }
@@ -55,7 +55,7 @@ class AMapNaviConfig extends NSObject  {
     return __result__;
   }
   
-  Future<CLLocationCoordinate2D> get_destination() async {
+  Future<CLLocationCoordinate2D?> get_destination() async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod("AMapNaviConfig::get_destination", {'__this__': this});
     return AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
@@ -106,22 +106,22 @@ class AMapNaviConfig extends NSObject  {
 
 extension AMapNaviConfig_Batch on List<AMapNaviConfig> {
   //region getters
-  Future<List<String>> get_appScheme_batch() async {
+  Future<List<String>?> get_appScheme_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapNaviConfig::get_appScheme_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<String>> get_appName_batch() async {
+  Future<List<String>?> get_appName_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapNaviConfig::get_appName_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<CLLocationCoordinate2D>> get_destination_batch() async {
+  Future<List<CLLocationCoordinate2D>?> get_destination_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapNaviConfig::get_destination_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => AmapCoreFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
-  Future<List<AMapDrivingStrategy>> get_strategy_batch() async {
+  Future<List<AMapDrivingStrategy>?> get_strategy_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapNaviConfig::get_strategy_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => (__result__ as int).toAMapDrivingStrategy())?.cast<AMapDrivingStrategy>()?.toList();
   }

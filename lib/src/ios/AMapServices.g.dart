@@ -23,7 +23,7 @@ class AMapServices extends NSObject  {
   //endregion
 
   //region creators
-  static Future<AMapServices> create__({ bool init = true /* ios only */ }) async {
+  static Future<AMapServices?> create__({ bool init = true /* ios only */ }) async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod(
       'ObjectFactory::createAMapServices',
       {'init': init}
@@ -31,13 +31,13 @@ class AMapServices extends NSObject  {
     return AmapCoreFluttifyIOSAs<AMapServices>(__result__);
   }
   
-  static Future<List<AMapServices>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+  static Future<List<AMapServices?>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     assert(true);
     final __result_batch__ = await  kAmapCoreFluttifyChannel.invokeListMethod(
       'ObjectFactory::create_batchAMapServices',
       {'length': length, 'init': init}
     );
-    return __result_batch__
+    return __result_batch__!
         .map((it) => AmapCoreFluttifyIOSAs<AMapServices>(it))
         .toList();
   }
@@ -90,7 +90,7 @@ class AMapServices extends NSObject  {
 
   //region methods
   
-  static Future<AMapServices> sharedServices() async {
+  static Future<AMapServices?> sharedServices() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: AMapServices::sharedServices([])');
@@ -116,22 +116,22 @@ class AMapServices extends NSObject  {
 
 extension AMapServices_Batch on List<AMapServices> {
   //region getters
-  Future<List<String>> get_apiKey_batch() async {
+  Future<List<String>?> get_apiKey_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapServices::get_apiKey_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
-  Future<List<bool>> get_enableHTTPS_batch() async {
+  Future<List<bool>?> get_enableHTTPS_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapServices::get_enableHTTPS_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
-  Future<List<bool>> get_crashReportEnabled_batch() async {
+  Future<List<bool>?> get_crashReportEnabled_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapServices::get_crashReportEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
-  Future<List<String>> get_identifier_batch() async {
+  Future<List<String>?> get_identifier_batch() async {
     final resultBatch = await kAmapCoreFluttifyChannel.invokeMethod("AMapServices::get_identifier_batch", [for (final __item__ in this) {'__this__': __item__}]);
     return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }

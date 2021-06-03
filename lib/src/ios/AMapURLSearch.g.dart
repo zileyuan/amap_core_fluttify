@@ -23,7 +23,7 @@ class AMapURLSearch extends NSObject  {
   //endregion
 
   //region creators
-  static Future<AMapURLSearch> create__({ bool init = true /* ios only */ }) async {
+  static Future<AMapURLSearch?> create__({ bool init = true /* ios only */ }) async {
     final __result__ = await kAmapCoreFluttifyChannel.invokeMethod(
       'ObjectFactory::createAMapURLSearch',
       {'init': init}
@@ -31,13 +31,13 @@ class AMapURLSearch extends NSObject  {
     return AmapCoreFluttifyIOSAs<AMapURLSearch>(__result__);
   }
   
-  static Future<List<AMapURLSearch>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+  static Future<List<AMapURLSearch?>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     assert(true);
     final __result_batch__ = await  kAmapCoreFluttifyChannel.invokeListMethod(
       'ObjectFactory::create_batchAMapURLSearch',
       {'length': length, 'init': init}
     );
-    return __result_batch__
+    return __result_batch__!
         .map((it) => AmapCoreFluttifyIOSAs<AMapURLSearch>(it))
         .toList();
   }

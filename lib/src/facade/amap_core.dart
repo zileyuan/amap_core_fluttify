@@ -12,7 +12,7 @@ class AmapCore {
       },
       ios: (pool) async {
         final service = await AMapServices.sharedServices();
-        await service.set_apiKey(iosKey);
+        await service!.set_apiKey(iosKey);
         await service.set_enableHTTPS(true);
       },
     );
